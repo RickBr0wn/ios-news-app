@@ -13,6 +13,7 @@ import {
 import Tab1 from './tabs/tabOne'
 import Tab2 from './tabs/tabTwo'
 import Tab3 from './tabs/tabThree'
+import Tab4 from './tabs/tabFour'
 
 function TabScreen() {
   return (
@@ -30,7 +31,7 @@ function TabScreen() {
           activeTabStyle={{ backgroundColor: '#009387' }}
           textStyle={{ color: '#ffffff' }}
           activeTextStyle={{ color: '#ffffff' }}
-          heading="Tab1">
+          heading="General">
           <Tab1 />
         </Tab>
         <Tab
@@ -38,7 +39,7 @@ function TabScreen() {
           activeTabStyle={{ backgroundColor: '#009387' }}
           textStyle={{ color: '#ffffff' }}
           activeTextStyle={{ color: '#ffffff' }}
-          heading="Tab2">
+          heading="Sport">
           <Tab2 />
         </Tab>
         <Tab
@@ -46,9 +47,17 @@ function TabScreen() {
           activeTabStyle={{ backgroundColor: '#009387' }}
           textStyle={{ color: '#ffffff' }}
           activeTextStyle={{ color: '#ffffff' }}
-          heading="Tab3">
+          heading="Politics">
           <Tab3 />
         </Tab>
+        {/* <Tab
+          tabStyle={{ backgroundColor: '#009387' }}
+          activeTabStyle={{ backgroundColor: '#009387' }}
+          textStyle={{ color: '#ffffff' }}
+          activeTextStyle={{ color: '#ffffff' }}
+          heading="Technology">
+          <Tab4 />
+        </Tab> */}
       </Tabs>
     </Container>
   )
