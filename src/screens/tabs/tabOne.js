@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import {
   Container,
   Content,
@@ -11,98 +11,46 @@ import {
   Right,
   Button,
 } from 'native-base'
+import { getArticles } from '../../service/news'
+import { useFetch } from '../../service/useFetch'
+import {
+  articles_url,
+  api_key,
+  category,
+  country_code,
+} from '../../config/rest.config.js'
+import NewsItem from '../../components/NewsItem'
 
 export default function ListThumbnailExample() {
-  return (
-    <Container>
-      <Content>
-        <List>
-          <ListItem thumbnail>
-            <Left>
-              <Thumbnail
-                square
-                source={{uri: 'https://source.unsplash.com/random'}}
-              />
-            </Left>
-            <Body>
-              <Text>This is the Title</Text>
-              <Text note numberOfLines={2}>
-                Its time to build a difference . .Its time to build a difference
-                . .Its time to build a difference . .Its time to build a
-                difference . .
-              </Text>
-            </Body>
-            <Right>
-              <Button transparent>
-                <Text>View</Text>
-              </Button>
-            </Right>
-          </ListItem>
-          <ListItem thumbnail>
-            <Left>
-              <Thumbnail
-                square
-                source={{uri: 'https://source.unsplash.com/random'}}
-              />
-            </Left>
-            <Body>
-              <Text>This is the Title</Text>
-              <Text note numberOfLines={2}>
-                Its time to build a difference . .Its time to build a difference
-                . .Its time to build a difference . .Its time to build a
-                difference . .
-              </Text>
-            </Body>
-            <Right>
-              <Button transparent>
-                <Text>View</Text>
-              </Button>
-            </Right>
-          </ListItem>
-          <ListItem thumbnail>
-            <Left>
-              <Thumbnail
-                square
-                source={{uri: 'https://source.unsplash.com/random'}}
-              />
-            </Left>
-            <Body>
-              <Text>This is the Title</Text>
-              <Text note numberOfLines={2}>
-                Its time to build a difference . .Its time to build a difference
-                . .Its time to build a difference . .Its time to build a
-                difference . .
-              </Text>
-            </Body>
-            <Right>
-              <Button transparent>
-                <Text>View</Text>
-              </Button>
-            </Right>
-          </ListItem>
-          <ListItem thumbnail>
-            <Left>
-              <Thumbnail
-                square
-                source={{uri: 'https://source.unsplash.com/random'}}
-              />
-            </Left>
-            <Body>
-              <Text>This is the Title</Text>
-              <Text note numberOfLines={2}>
-                Its time to build a difference . .Its time to build a difference
-                . .Its time to build a difference . .Its time to build a
-                difference . .
-              </Text>
-            </Body>
-            <Right>
-              <Button transparent>
-                <Text>View</Text>
-              </Button>
-            </Right>
-          </ListItem>
-        </List>
-      </Content>
-    </Container>
+  const [response, error, isLoading] = useFetch(
+    `${articles_url}?country=${country_code}&category=${category}`,
+    {
+      headers: { 'X-API-KEY': api_key },
+    },
   )
+
+  if (isLoading) {
+    // TODO: add spinner from native-base
+    return <Text>Loading DATA</Text>
+  }
+
+  if (error) {
+    return <Alert>There has been an error 😒{error.message}</Alert>
+  }
+
+  if (response && response.data) {
+    console.log(response.data.articles)
+    return (
+      <Container>
+        <Content>
+          <List
+            dataArray={response.data.articles}
+            renderRow={newsItem => <NewsItem data={newsItem} />}
+          />
+        </Content>
+      </Container>
+    )
+  }
+
+  return null
 }

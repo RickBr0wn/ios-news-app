@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import {
   Container,
   Header,
@@ -17,35 +17,35 @@ import Tab3 from './tabs/tabThree'
 function TabScreen() {
   return (
     <Container>
-      <Header style={{backgroundColor: '#009387'}} hasTabs>
+      <Header style={{ backgroundColor: '#009387' }} hasTabs>
         <Left />
         <Body>
-          <Title style={{color: '#ffffff'}}>iOS News</Title>
+          <Title style={{ color: '#ffffff' }}>iOS News</Title>
         </Body>
         <Right />
       </Header>
-      <Tabs tabBarUnderlineStyle={{backgroundColor: '#ffffff'}}>
+      <Tabs tabBarUnderlineStyle={{ backgroundColor: '#ffffff' }}>
         <Tab
-          tabStyle={{backgroundColor: '#009387'}}
-          activeTabStyle={{backgroundColor: '#009387'}}
-          textStyle={{color: '#ffffff'}}
-          activeTextStyle={{color: '#ffffff'}}
+          tabStyle={{ backgroundColor: '#009387' }}
+          activeTabStyle={{ backgroundColor: '#009387' }}
+          textStyle={{ color: '#ffffff' }}
+          activeTextStyle={{ color: '#ffffff' }}
           heading="Tab1">
           <Tab1 />
         </Tab>
         <Tab
-          tabStyle={{backgroundColor: '#009387'}}
-          activeTabStyle={{backgroundColor: '#009387'}}
-          textStyle={{color: '#ffffff'}}
-          activeTextStyle={{color: '#ffffff'}}
+          tabStyle={{ backgroundColor: '#009387' }}
+          activeTabStyle={{ backgroundColor: '#009387' }}
+          textStyle={{ color: '#ffffff' }}
+          activeTextStyle={{ color: '#ffffff' }}
           heading="Tab2">
           <Tab2 />
         </Tab>
         <Tab
-          tabStyle={{backgroundColor: '#009387'}}
-          activeTabStyle={{backgroundColor: '#009387'}}
-          textStyle={{color: '#ffffff'}}
-          activeTextStyle={{color: '#ffffff'}}
+          tabStyle={{ backgroundColor: '#009387' }}
+          activeTabStyle={{ backgroundColor: '#009387' }}
+          textStyle={{ color: '#ffffff' }}
+          activeTextStyle={{ color: '#ffffff' }}
           heading="Tab3">
           <Tab3 />
         </Tab>
