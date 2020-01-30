@@ -7,23 +7,15 @@
  */
 
 import React from 'react'
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native'
+import {Container, Text} from 'native-base'
+import TabScreen from './src/screens/tabScreen'
 
 const App: () => React$Node = () => {
   return (
-    <>
-      <Text>App</Text>
-    </>
+    <Container>
+      <TabScreen />
+    </Container>
   )
 }
-
-const styles = StyleSheet.create({})
 
 export default App
