@@ -17,21 +17,36 @@ import Tab3 from './tabs/tabThree'
 function TabScreen() {
   return (
     <Container>
-      <Header hasTabs>
+      <Header style={{backgroundColor: '#009387'}} hasTabs>
         <Left />
         <Body>
-          <Title>iOS News</Title>
+          <Title style={{color: '#ffffff'}}>iOS News</Title>
         </Body>
         <Right />
       </Header>
-      <Tabs>
-        <Tab heading="Tab1">
+      <Tabs tabBarUnderlineStyle={{backgroundColor: '#ffffff'}}>
+        <Tab
+          tabStyle={{backgroundColor: '#009387'}}
+          activeTabStyle={{backgroundColor: '#009387'}}
+          textStyle={{color: '#ffffff'}}
+          activeTextStyle={{color: '#ffffff'}}
+          heading="Tab1">
           <Tab1 />
         </Tab>
-        <Tab heading="Tab2">
+        <Tab
+          tabStyle={{backgroundColor: '#009387'}}
+          activeTabStyle={{backgroundColor: '#009387'}}
+          textStyle={{color: '#ffffff'}}
+          activeTextStyle={{color: '#ffffff'}}
+          heading="Tab2">
           <Tab2 />
         </Tab>
-        <Tab heading="Tab3">
+        <Tab
+          tabStyle={{backgroundColor: '#009387'}}
+          activeTabStyle={{backgroundColor: '#009387'}}
+          textStyle={{color: '#ffffff'}}
+          activeTextStyle={{color: '#ffffff'}}
+          heading="Tab3">
           <Tab3 />
         </Tab>
       </Tabs>
