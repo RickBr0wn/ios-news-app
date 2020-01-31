@@ -20,14 +20,29 @@ import {
   country_code,
 } from '../../config/rest.config.js'
 import NewsItem from '../../components/NewsItem'
+import Modal from '../../components/Modal'
 
-export default function ListThumbnailExample() {
+export default function() {
+  const [visibility, setVisibility] = React.useState(false)
+  const [modalArticleData, setModalArticleData] = React.useState({})
   const [response, error, isLoading] = useFetch(
     `${articles_url}?country=${country_code}&category=${category}`,
     {
       headers: { 'X-API-KEY': api_key },
     },
   )
+
+  const handleNewsItemPress = article => {
+    setVisibility(true)
+    setModalArticleData(article)
+  }
+
+  const handleNewsItemClose = () => {
+    setVisibility(false)
+    setModalArticleData({})
+  }
+
+  const handleShare = article => {}
 
   if (isLoading) {
     // TODO: add spinner from native-base
@@ -45,12 +60,24 @@ export default function ListThumbnailExample() {
         <Content>
           <List
             dataArray={response.data.articles}
-            renderRow={newsItem => <NewsItem data={newsItem} />}
+            renderRow={newsItem => (
+              <NewsItem
+                handleNewsItemPress={handleNewsItemPress}
+                item={newsItem}
+              />
+            )}
           />
         </Content>
+        <Modal
+          visibility={visibility}
+          showModal={setVisibility}
+          article={modalArticleData}
+          onClose={handleNewsItemClose}
+          share={handleShare}
+        />
       </Container>
     )
   }
 
-  return null
+  return <Text>loading</Text>
 }

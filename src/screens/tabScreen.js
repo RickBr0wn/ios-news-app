@@ -39,7 +39,7 @@ function TabScreen() {
           activeTabStyle={{ backgroundColor: '#009387' }}
           textStyle={{ color: '#ffffff' }}
           activeTextStyle={{ color: '#ffffff' }}
-          heading="Sport">
+          heading="Technology">
           <Tab2 />
         </Tab>
         <Tab
@@ -47,17 +47,9 @@ function TabScreen() {
           activeTabStyle={{ backgroundColor: '#009387' }}
           textStyle={{ color: '#ffffff' }}
           activeTextStyle={{ color: '#ffffff' }}
-          heading="Politics">
+          heading="Sport">
           <Tab3 />
         </Tab>
-        {/* <Tab
-          tabStyle={{ backgroundColor: '#009387' }}
-          activeTabStyle={{ backgroundColor: '#009387' }}
-          textStyle={{ color: '#ffffff' }}
-          activeTextStyle={{ color: '#ffffff' }}
-          heading="Technology">
-          <Tab4 />
-        </Tab> */}
       </Tabs>
     </Container>
   )
