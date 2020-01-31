@@ -10,6 +10,7 @@ import {
   Body,
   Right,
   Button,
+  Spinner,
 } from 'native-base'
 import { getArticles } from '../../service/news'
 import { useFetch } from '../../service/useFetch'
@@ -45,8 +46,7 @@ export default function() {
   const handleShare = article => {}
 
   if (isLoading) {
-    // TODO: add spinner from native-base
-    return <Text>Loading DATA</Text>
+    return <Spinner />
   }
 
   if (error) {

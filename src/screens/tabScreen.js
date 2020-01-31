@@ -18,7 +18,7 @@ import Tab4 from './tabs/tabFour'
 function TabScreen() {
   return (
     <Container>
-      <Header style={{ backgroundColor: '#009387' }} hasTabs>
+      <Header style={{ backgroundColor: '#4F6D7A' }} hasTabs>
         <Left />
         <Body>
           <Title style={{ color: '#ffffff' }}>iOS News</Title>
@@ -27,24 +27,24 @@ function TabScreen() {
       </Header>
       <Tabs tabBarUnderlineStyle={{ backgroundColor: '#ffffff' }}>
         <Tab
-          tabStyle={{ backgroundColor: '#009387' }}
-          activeTabStyle={{ backgroundColor: '#009387' }}
+          tabStyle={{ backgroundColor: '#4F6D7A' }}
+          activeTabStyle={{ backgroundColor: '#4F6D7A' }}
           textStyle={{ color: '#ffffff' }}
           activeTextStyle={{ color: '#ffffff' }}
           heading="General">
           <Tab1 />
         </Tab>
         <Tab
-          tabStyle={{ backgroundColor: '#009387' }}
-          activeTabStyle={{ backgroundColor: '#009387' }}
+          tabStyle={{ backgroundColor: '#4F6D7A' }}
+          activeTabStyle={{ backgroundColor: '#4F6D7A' }}
           textStyle={{ color: '#ffffff' }}
           activeTextStyle={{ color: '#ffffff' }}
           heading="Technology">
           <Tab2 />
         </Tab>
         <Tab
-          tabStyle={{ backgroundColor: '#009387' }}
-          activeTabStyle={{ backgroundColor: '#009387' }}
+          tabStyle={{ backgroundColor: '#4F6D7A' }}
+          activeTabStyle={{ backgroundColor: '#4F6D7A' }}
           textStyle={{ color: '#ffffff' }}
           activeTextStyle={{ color: '#ffffff' }}
           heading="Sport">
